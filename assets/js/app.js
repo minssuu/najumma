@@ -26,7 +26,7 @@
     return `<a class="member-card${compact ? ' compact' : ''}" href="profile.html?id=${personId}">
       <span class="member-no">${p.no}</span>
       <span><b>${escapeHtml(p.name)}</b><small>${escapeHtml(p.en)} · ${escapeHtml(p.role)}</small></span>
-      <em>${p.animal}</em><i>↗</i>
+      <i>↗</i>
     </a>`;
   }
 
@@ -36,15 +36,14 @@
     return `
       <section class="past-story-section">
         <p class="eyebrow">Past story</p>
-        <h2>과거 이야기</h2>
+        <h2>${escapeHtml(DATA.people[personId].name)}의 이야기</h2>
         <details class="novel-reader">
           <summary>
-            <span><small>${escapeHtml(story.subtitle)}</small><b>${escapeHtml(story.title)}</b></span>
+            <span><b>${escapeHtml(story.title)}</b></span>
             <i><span class="reader-open">READ</span><span class="reader-close">CLOSE</span> ＋</i>
           </summary>
           <article>
             <header>
-              <p>${escapeHtml(story.subtitle)}</p>
               <h3>${escapeHtml(story.title)}</h3>
               <span></span>
             </header>
@@ -149,13 +148,9 @@
     document.title = `${p.name} · 나 같은 아줌마가 뭐가 좋다고`;
     root.innerHTML = `
       <section class="profile-hero detail-hero">
-        <div class="profile-watermark" aria-hidden="true">${escapeHtml(p.no)}</div>
-        <p class="detail-label">CHARACTER ARCHIVE · ${escapeHtml(p.no)}</p>
-        <div class="animal-mark" aria-hidden="true">${p.animal}</div>
+        <p class="detail-label">${escapeHtml(p.titleEn)}</p>
         <h1>${escapeHtml(p.name)}</h1>
         <p class="profile-en">${escapeHtml(p.en)}</p>
-        <div class="profile-role"><span>${escapeHtml(p.affiliation)}</span><i></i><b>${escapeHtml(p.role)}</b></div>
-        <div class="keyword-row">${p.keywords.map(word => `<span>${escapeHtml(word)}</span>`).join('')}</div>
       </section>
       <section class="detail-content profile-content">
         <div class="identity-grid">
@@ -163,9 +158,7 @@
           <div><span>TYPE</span><b>${escapeHtml(p.mbti)}</b><small>${escapeHtml(p.nationality)}</small></div>
           <div><span>HEIGHT</span><b>${escapeHtml(p.height)}</b><small>PROFILE</small></div>
         </div>
-        <div class="story-block">
-          <p class="eyebrow">Story</p>
-          <h2>그녀가 살아온 방식</h2>
+        <div class="story-block profile-bio">
           <p>${escapeHtml(p.bio)}</p>
         </div>
         <div class="appearance-block">
@@ -173,7 +166,6 @@
           <p>${escapeHtml(p.look)}</p>
         </div>
         <p class="profile-note">${escapeHtml(p.note)}</p>
-        ${p.company ? `<a class="gold-button wide" href="company.html?id=${p.company}">${escapeHtml(DATA.companies[p.company].name)} 보러가기 <span>↗</span></a>` : ''}
         ${renderPastStory(id)}
         ${renderInventory(p)}
       </section>
@@ -210,7 +202,13 @@
   const track = TRACKS[trackKey];
 
   const pageCurtain = document.getElementById('page-curtain');
-  requestAnimationFrame(() => requestAnimationFrame(() => pageCurtain.classList.remove('is-covering')));
+  const uncoverPage = () => {
+    pageCurtain.classList.remove('is-covering');
+    document.body.classList.remove('modal-open');
+  };
+  requestAnimationFrame(() => requestAnimationFrame(uncoverPage));
+  window.addEventListener('pageshow', () => requestAnimationFrame(uncoverPage));
+  window.addEventListener('popstate', uncoverPage);
 
   function createPlayer() {
     const shell = document.createElement('aside');
@@ -343,6 +341,13 @@
     }, { once: true });
 
     let isNavigating = false;
+    window.addEventListener('pageshow', event => {
+      isNavigating = false;
+      pageCurtain.classList.remove('is-covering');
+      if (!event.persisted) return;
+      if (audio.paused) playAudio();
+      else fadeTo(targetVolume, 900);
+    });
     document.addEventListener('click', event => {
       const link = event.target.closest('a[href]');
       if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -378,7 +383,6 @@
     '.past-story-section > .eyebrow',
     '.past-story-section > h2',
     '.novel-reader',
-    '.novel-reader article > p',
     '.inventory-heading',
     '.inventory-guide',
     '.inventory-item',

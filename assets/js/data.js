@@ -31,7 +31,7 @@ window.NAJUMMA_DATA = {
   },
   people: {
     yurim: {
-      no: '01', animal: '🐺', name: '차유림', en: 'CHA YURIM',
+      no: '01', name: '차유림', en: 'CHA YURIM', titleEn: 'LUMEN CEO',
       role: '루멘 대표', affiliation: 'LUMEN', birth: '1980. 08. 21', age: '46세', mbti: 'INTJ', height: '166 CM', nationality: 'KOREA',
       keywords: ['ELEGANT', 'CONTROL', 'LEGEND'],
       look: '검은 중단발 웨이브 · 날카로운 눈매 · 실크 블라우스와 검은 재킷',
@@ -44,7 +44,7 @@ window.NAJUMMA_DATA = {
       ]
     },
     livia: {
-      no: '02', animal: '🦊', name: '리비아 콘티', en: 'LIVIA CONTI',
+      no: '02', name: '리비아 콘티', en: 'LIVIA CONTI', titleEn: 'LUMEN CONTENT STRATEGY DIRECTOR',
       role: '루멘 콘텐츠전략팀장', affiliation: 'LUMEN', birth: '1973. 06. 14', age: '53세', mbti: 'ENTP', height: '167 CM', nationality: 'ITALIA',
       keywords: ['MILANO', 'LUXURY', 'STRATEGY'],
       look: '백금발 미디엄 숏 · 푸른 눈 · 블라우스와 슬랙스, 스틸레토',
@@ -57,7 +57,7 @@ window.NAJUMMA_DATA = {
       ]
     },
     jian: {
-      no: '03', animal: '🐶', name: '오지안', en: 'OH JIAN',
+      no: '03', name: '오지안', en: 'OH JIAN', titleEn: "IM'BEAUTY MARKETING DIRECTOR",
       role: '아임뷰티 마케팅본부장', affiliation: "IM'BEAUTY", birth: '1987. 10. 10', age: '39세', mbti: 'ISTJ', height: '171 CM', nationality: 'KOREA',
       keywords: ['ROUTINE', 'RESULT', 'DISCIPLINE'],
       look: '단정한 숏컷 · 짙은 눈 · 흰 셔츠와 슬랙스, 코트',
@@ -70,7 +70,7 @@ window.NAJUMMA_DATA = {
       ]
     },
     yuna: {
-      no: '04', animal: '🐰', name: '정윤아', en: 'JUNG YUNA',
+      no: '04', name: '정윤아', en: 'JUNG YUNA', titleEn: 'ACTRESS',
       role: '배우', affiliation: 'ACTRESS', birth: '1985. 05. 12', age: '41세', mbti: 'ISFJ', height: '165 CM', nationality: 'KOREA',
       keywords: ['ACTRESS', 'MEMORY', 'RETURN'],
       look: '밝은 갈색 웨이브 · 부드러운 눈빛 · 코트와 셔츠, 슬랙스, 로퍼',
