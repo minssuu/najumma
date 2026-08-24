@@ -33,18 +33,19 @@
   function renderPastStory(personId) {
     const story = window.NAJUMMA_STORIES && window.NAJUMMA_STORIES[personId];
     if (!story) return '';
+    const storyTitle = escapeHtml(story.title).replace(/\n/g, '<br>');
     return `
       <section class="past-story-section">
         <p class="eyebrow">Past story</p>
         <h2>${escapeHtml(DATA.people[personId].name)}의 이야기</h2>
-        <details class="novel-reader${story.title.length > 12 ? ' long-title' : ''}">
+        <details class="novel-reader">
           <summary>
-            <span><b>${escapeHtml(story.title)}</b></span>
+            <span><b>${storyTitle}</b></span>
             <i><span class="reader-open">READ</span><span class="reader-close">CLOSE</span> ＋</i>
           </summary>
           <article>
             <header>
-              <h3>${escapeHtml(story.title)}</h3>
+              <h3>${storyTitle}</h3>
               <span></span>
             </header>
             ${story.paragraphs.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join('')}
@@ -57,7 +58,29 @@
       </section>`;
   }
 
-  function renderTmi() {
+  function renderExtras(person) {
+    const extras = person.extras || [];
+    if (!extras.length) return '';
+    return `
+      <section class="extra-section">
+        <div class="extra-heading">
+          <p class="eyebrow">More profile</p>
+          <h2>기타 정보</h2>
+        </div>
+        <dl class="extra-list">
+          ${extras.map(([label, value]) => `
+            <div class="extra-row">
+              <dt>${escapeHtml(label)}</dt>
+              <dd>${escapeHtml(value)}</dd>
+            </div>`).join('')}
+        </dl>
+      </section>`;
+  }
+
+  function renderTmi(person) {
+    const items = person.tmi || [];
+    const labels = ['첫 번째', '두 번째', '세 번째', '네 번째'];
+    if (!items.length) return '';
     return `
       <section class="tmi-section">
         <div class="tmi-heading">
@@ -65,10 +88,10 @@
           <h2>TMI</h2>
         </div>
         <div class="tmi-grid">
-          ${['첫 번째', '두 번째'].map(label => `
+          ${items.map((item, index) => `
             <details class="tmi-card">
-              <summary><span>${label}</span><i>＋</i></summary>
-              <div><p>내용 준비 중</p></div>
+              <summary><span>${labels[index] || `${index + 1}번째`}</span><i>＋</i></summary>
+              <div><p>${escapeHtml(item)}</p></div>
             </details>`).join('')}
         </div>
       </section>`;
@@ -187,8 +210,9 @@
           <div><span>TYPE</span><b>${escapeHtml(p.mbti)}</b><small>${escapeHtml(p.nationality)}</small></div>
           <div><span>HEIGHT</span><b>${escapeHtml(p.height)}</b><small>PROFILE</small></div>
         </div>
+        ${renderExtras(p)}
         ${renderPastStory(id)}
-        ${renderTmi()}
+        ${renderTmi(p)}
         ${renderInventory(p)}
       </section>
       <nav class="bottom-nav">
@@ -411,6 +435,8 @@
     '.related-block > *',
     '.member-card',
     '.identity-grid > div',
+    '.extra-heading',
+    '.extra-row',
     '.gold-button',
     '.past-story-section > .eyebrow',
     '.past-story-section > h2',
