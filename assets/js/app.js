@@ -54,6 +54,23 @@
       </section>`;
   }
 
+  function renderTmi() {
+    return `
+      <section class="tmi-section">
+        <div class="tmi-heading">
+          <p class="eyebrow">Tiny moments</p>
+          <h2>TMI</h2>
+        </div>
+        <div class="tmi-grid">
+          ${[1, 2].map(number => `
+            <details class="tmi-card">
+              <summary><span>[TMI ${number}]</span><i>＋</i></summary>
+              <div><p>내용 준비 중</p></div>
+            </details>`).join('')}
+        </div>
+      </section>`;
+  }
+
   function renderInventory(person) {
     const items = person.inventory || [];
     if (!items.length) return '';
@@ -148,25 +165,25 @@
     document.title = `${p.name} · 나 같은 아줌마가 뭐가 좋다고`;
     root.innerHTML = `
       <section class="profile-hero detail-hero">
+        <video class="profile-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="${escapeHtml(p.video)}" type="video/mp4">
+        </video>
         <p class="detail-label">${escapeHtml(p.titleEn)}</p>
         <h1>${escapeHtml(p.name)}</h1>
         <p class="profile-en">${escapeHtml(p.en)}</p>
+        <div class="keyword-row">${p.keywords.map(word => `<span>${escapeHtml(word)}</span>`).join('')}</div>
       </section>
       <section class="detail-content profile-content">
+        <div class="story-block profile-bio">
+          <p>${escapeHtml(p.bio)}</p>
+        </div>
         <div class="identity-grid">
           <div><span>BIRTH</span><b>${escapeHtml(p.birth)}</b><small>${escapeHtml(p.age)}</small></div>
           <div><span>TYPE</span><b>${escapeHtml(p.mbti)}</b><small>${escapeHtml(p.nationality)}</small></div>
           <div><span>HEIGHT</span><b>${escapeHtml(p.height)}</b><small>PROFILE</small></div>
         </div>
-        <div class="story-block profile-bio">
-          <p>${escapeHtml(p.bio)}</p>
-        </div>
-        <div class="appearance-block">
-          <span>APPEARANCE</span>
-          <p>${escapeHtml(p.look)}</p>
-        </div>
-        <p class="profile-note">${escapeHtml(p.note)}</p>
         ${renderPastStory(id)}
+        ${renderTmi()}
         ${renderInventory(p)}
       </section>
       <nav class="bottom-nav">
@@ -377,12 +394,12 @@
     '.related-block > *',
     '.member-card',
     '.identity-grid > div',
-    '.appearance-block > *',
-    '.profile-note',
     '.gold-button',
     '.past-story-section > .eyebrow',
     '.past-story-section > h2',
     '.novel-reader',
+    '.tmi-heading',
+    '.tmi-card',
     '.inventory-heading',
     '.inventory-guide',
     '.inventory-item',

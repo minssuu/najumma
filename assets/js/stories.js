@@ -70,5 +70,17 @@ window.NAJUMMA_STORIES = {
       '그래서 아직도 멈추지 못한다.',
       '충분히 멀리 왔다는 것과 이제 멈춰도 된다는 것은, 여전히 다른 문장이었으므로.'
     ]
+  },
+  livia: {
+    title: '아직 쓰이지 않은 이야기',
+    subtitle: 'PAST STORY',
+    pending: true,
+    paragraphs: ['리비아 콘티의 이야기는 추후 공개됩니다.']
+  },
+  yuna: {
+    title: '아직 쓰이지 않은 이야기',
+    subtitle: 'PAST STORY',
+    pending: true,
+    paragraphs: ['정윤아의 이야기는 추후 공개됩니다.']
   }
 };

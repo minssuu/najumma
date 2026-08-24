@@ -31,9 +31,9 @@ window.NAJUMMA_DATA = {
   },
   people: {
     yurim: {
-      no: '01', name: '차유림', en: 'CHA YURIM', titleEn: 'LUMEN CEO',
+      no: '01', name: '차유림', en: 'CHA YURIM', titleEn: 'LUMEN CEO', video: 'assets/video/chayulim.mp4',
       role: '루멘 대표', affiliation: 'LUMEN', birth: '1980. 08. 21', age: '46세', mbti: 'INTJ', height: '166 CM', nationality: 'KOREA',
-      keywords: ['ELEGANT', 'CONTROL', 'LEGEND'],
+      keywords: ['#재력', '#능력', '#이혼', '#처연'],
       look: '검은 중단발 웨이브 · 날카로운 눈매 · 실크 블라우스와 검은 재킷',
       bio: '스물다섯에 루멘을 창업해 30대에 중견사로 성장시킨 광고계의 전설. 젊은 여성 대표라는 이유로 끊임없이 평가절하당하며 감정과 표정, 말투를 완벽히 통제하는 법을 익혔다. 고급스럽고 우아한 분위기 아래 누구보다 단단한 생존 방식이 있다.',
       note: 'DIVORCED · FOUNDER & CEO',
@@ -44,9 +44,9 @@ window.NAJUMMA_DATA = {
       ]
     },
     livia: {
-      no: '02', name: '리비아 콘티', en: 'LIVIA CONTI', titleEn: 'LUMEN CONTENT STRATEGY DIRECTOR',
+      no: '02', name: '리비아 콘티', en: 'LIVIA CONTI', titleEn: 'LUMEN CONTENT STRATEGY DIRECTOR', video: 'assets/video/liviaconti.mp4',
       role: '루멘 콘텐츠전략팀장', affiliation: 'LUMEN', birth: '1973. 06. 14', age: '53세', mbti: 'ENTP', height: '167 CM', nationality: 'ITALIA',
-      keywords: ['MILANO', 'LUXURY', 'STRATEGY'],
+      keywords: ['#낭만', '#능글', '#열정', '#여유'],
       look: '백금발 미디엄 숏 · 푸른 눈 · 블라우스와 슬랙스, 스틸레토',
       bio: '밀라노의 럭셔리 PR 업계에서 7년간 경력을 쌓고 2006년 한국에 정착했다. 유림의 스카우트로 루멘에 합류한 뒤 콘텐츠 전략을 맡아, 타인의 욕망을 정확히 읽고 가장 매혹적인 형태로 바꾸어 낸다.',
       note: 'MILANO TO SEOUL · HEAD OF CONTENT STRATEGY',
@@ -57,9 +57,9 @@ window.NAJUMMA_DATA = {
       ]
     },
     jian: {
-      no: '03', name: '오지안', en: 'OH JIAN', titleEn: "IM'BEAUTY MARKETING DIRECTOR",
+      no: '03', name: '오지안', en: 'OH JIAN', titleEn: "IM'BEAUTY MARKETING DIRECTOR", video: 'assets/video/ohjian.mp4',
       role: '아임뷰티 마케팅본부장', affiliation: "IM'BEAUTY", birth: '1987. 10. 10', age: '39세', mbti: 'ISTJ', height: '171 CM', nationality: 'KOREA',
-      keywords: ['ROUTINE', 'RESULT', 'DISCIPLINE'],
+      keywords: ['#자수성가', '#워커홀릭', '#루틴', '#통제'],
       look: '단정한 숏컷 · 짙은 눈 · 흰 셔츠와 슬랙스, 코트',
       bio: '감정보다 통제와 루틴을 믿으며 살아온 사람. 흔들림 없는 성과로 자신의 자리를 증명했고, 서른일곱에 아임뷰티 마케팅본부장으로 승진했다. 모든 것을 계획대로 다루는 그녀에게 예측할 수 없는 감정만이 유일한 변수다.',
       note: 'MARKETING DIRECTOR · PERFORMANCE FIRST',
@@ -70,9 +70,9 @@ window.NAJUMMA_DATA = {
       ]
     },
     yuna: {
-      no: '04', name: '정윤아', en: 'JUNG YUNA', titleEn: 'ACTRESS',
+      no: '04', name: '정윤아', en: 'JUNG YUNA', titleEn: 'ACTRESS', video: 'assets/video/jungyoonah.mp4',
       role: '배우', affiliation: 'ACTRESS', birth: '1985. 05. 12', age: '41세', mbti: 'ISFJ', height: '165 CM', nationality: 'KOREA',
-      keywords: ['ACTRESS', 'MEMORY', 'RETURN'],
+      keywords: ['#다정', '#자낮', '#욕심', '#소녀감성'],
       look: '밝은 갈색 웨이브 · 부드러운 눈빛 · 코트와 셔츠, 슬랙스, 로퍼',
       bio: "열여덟에 데뷔해 20대에 '국민여동생'으로 불리며 정상에 올랐다. 30대에 접어들며 캐스팅이 줄었고, 서른셋 계약 만료 뒤 대중의 시야에서 조용히 사라졌다. 한 시대의 얼굴이었던 그녀의 다음 장면은 아직 끝나지 않았다.",
       note: 'DEBUT 2003 · FORMER TOP STAR',
