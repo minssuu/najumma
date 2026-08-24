@@ -42,7 +42,7 @@ window.NAJUMMA_DATA = {
       ],
       tmi: [
         '퀸사이즈 침대를 쓴다. 킹 사이즈는 너무 넓게 느껴져서.',
-        '엘리베이터에서 층수 버튼을 남이 눌러주면 감사하다고 한다.',
+        '정윤아가 과거 자신에게 호감이 있었다는 사실을 눈치채고 있었다.',
         '전 처에 대한 소식이 들려도 표정 변화가 없다.',
         '합의 이혼을 했다. 구설수에 오르기 싫어서 조용히 끝냈다.'
       ],
@@ -52,7 +52,12 @@ window.NAJUMMA_DATA = {
       company: 'lumen',
       inventory: [
         { type: 'VEHICLE', name: 'Mercedes-Maybach', image: 'assets/inventory/yurim-car.png' },
-        { type: 'BUSINESS CARD', name: 'LUMEN CEO CARD', image: 'assets/inventory/yurim-card.png' }
+        { type: 'BUSINESS CARD', name: 'LUMEN CEO CARD', image: 'assets/inventory/yurim-card.png' },
+        { type: 'PERFUME', name: 'Le Labo Santal 33', image: 'assets/inventory/yurim-perfume.webp' },
+        { type: 'CIGARETTES', name: 'Dunhill Fine Cut', image: 'assets/inventory/yurim-cigarettes.webp' },
+        { type: 'WHISKY', name: 'The Macallan 18 Double Cask', image: 'assets/inventory/yurim-whisky.webp' },
+        { type: 'PHONE', name: 'Samsung Galaxy Z Fold', image: 'assets/inventory/yurim-phone.webp' },
+        { type: 'BAG', name: 'Chanel Bag', image: 'assets/inventory/yurim-bag.webp' }
       ]
     },
     livia: {
@@ -78,7 +83,14 @@ window.NAJUMMA_DATA = {
       company: 'lumen',
       inventory: [
         { type: 'VEHICLE', name: 'Porsche Cabriolet', image: 'assets/inventory/livia-car.png' },
-        { type: 'BUSINESS CARD', name: 'LUMEN STRATEGY CARD', image: 'assets/inventory/livia-card.png' }
+        { type: 'BUSINESS CARD', name: 'LUMEN STRATEGY CARD', image: 'assets/inventory/livia-card.png' },
+        { type: 'WATCH', name: 'Bvlgari Watch', image: 'assets/inventory/livia-watch.webp' },
+        { type: 'BRACELET', name: 'Versace Bracelet', image: 'assets/inventory/livia-bracelet.webp' },
+        { type: 'CIGARETTES & LIGHTER', name: 'Davidoff & Zippo', image: 'assets/inventory/livia-cigarettes-lighter.webp' },
+        { type: 'PERFUME', name: 'Diptyque Tam Dao', image: 'assets/inventory/livia-perfume.webp' },
+        { type: 'PHONE', name: 'Apple iPhone 17 Pro Max', image: 'assets/inventory/livia-phone.webp' },
+        { type: 'BAG', name: 'Dolce & Gabbana Bag', image: 'assets/inventory/livia-bag.webp' },
+        { type: 'CAR KEY', name: 'Porsche Key', image: 'assets/inventory/livia-car-key.webp' }
       ]
     },
     jian: {
@@ -88,7 +100,7 @@ window.NAJUMMA_DATA = {
       extras: [
         ['향수', '무향에 가까운 비누향'],
         ['거주', '성수 트리마제 23층'],
-        ['선호하는 브랜드', 'TUMI · 몽블랑 만년필'],
+        ['선호하는 브랜드', 'TUMI · 몽블랑 · 오메가'],
         ['시력', '평소 콘택트렌즈, 집에서 안경'],
         ['습관', '새벽 러닝 + 저녁 맨몸운동']
       ],
@@ -104,7 +116,13 @@ window.NAJUMMA_DATA = {
       company: 'imbeauty',
       inventory: [
         { type: 'VEHICLE', name: 'Genesis G80', image: 'assets/inventory/jian-car.png' },
-        { type: 'BUSINESS CARD', name: "IM'BEAUTY DIRECTOR CARD", image: 'assets/inventory/jian-card.png' }
+        { type: 'BUSINESS CARD', name: "IM'BEAUTY DIRECTOR CARD", image: 'assets/inventory/jian-card.png' },
+        { type: 'WATCH', name: 'Omega Watch', image: 'assets/inventory/jian-watch.webp' },
+        { type: 'FOUNTAIN PEN', name: 'Montblanc Fountain Pen', image: 'assets/inventory/jian-pen.webp' },
+        { type: 'PHONE', name: 'Samsung Galaxy S Ultra', image: 'assets/inventory/jian-phone.webp' },
+        { type: 'WALLET', name: 'Hermès Wallet', image: 'assets/inventory/jian-wallet.webp' },
+        { type: 'HANDKERCHIEF', name: 'Burberry Handkerchief', image: 'assets/inventory/jian-handkerchief.webp' },
+        { type: 'BAG', name: 'TUMI Bag', image: 'assets/inventory/jian-bag.webp' }
       ]
     },
     yuna: {
@@ -114,7 +132,7 @@ window.NAJUMMA_DATA = {
       extras: [
         ['향수', '무화과 (Diptyque Philosykos)'],
         ['거주', '성북 레미안 12층'],
-        ['선호하는 브랜드', '반클리프 · 디올'],
+        ['선호하는 브랜드', '반클리프 · 디올 · 에르메스'],
         ['좋아하는 음료', '캐모마일'],
         ['습관', '피부관리·안티에이징 꾸준히']
       ],
@@ -130,7 +148,14 @@ window.NAJUMMA_DATA = {
       company: null,
       theme: 'yuna',
       inventory: [
-        { type: 'VEHICLE', name: 'MINI Cooper Cabriolet', image: 'assets/inventory/yuna-car.png' }
+        { type: 'VEHICLE', name: 'MINI Cooper Cabriolet', image: 'assets/inventory/yuna-car.png' },
+        { type: 'PERFUME', name: 'Diptyque Philosykos', image: 'assets/inventory/yuna-perfume.webp' },
+        { type: 'SCRIPT ARCHIVE', name: 'Script Collection', image: 'assets/inventory/yuna-scripts.webp' },
+        { type: 'SUNGLASSES', name: 'Dior Sunglasses', image: 'assets/inventory/yuna-sunglasses.webp' },
+        { type: 'PHONE', name: 'Apple iPhone', image: 'assets/inventory/yuna-phone.webp' },
+        { type: 'LIPSTICK', name: 'Dior Lipstick', image: 'assets/inventory/yuna-lipstick.webp' },
+        { type: 'BAG', name: 'Hermès Bag', image: 'assets/inventory/yuna-bag.webp' },
+        { type: 'BRACELET', name: 'Van Cleef & Arpels Bracelet', image: 'assets/inventory/yuna-bracelet.webp' }
       ]
     }
   }

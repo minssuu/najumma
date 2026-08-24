@@ -106,7 +106,7 @@
           <div><p class="eyebrow">Personal archive</p><h2>인벤토리</h2></div>
           <span>${String(items.length).padStart(2, '0')} ITEMS</span>
         </div>
-        <p class="inventory-guide">아이템을 누르면 원본 이미지를 크게 볼 수 있습니다.</p>
+        <p class="inventory-guide">좌우로 넘겨 아이템을 보고, 선택하면 이미지가 크게 열립니다.</p>
         <div class="inventory-grid${items.length === 1 ? ' single' : ''}">
           ${items.map((item, index) => `
             <button class="inventory-item" type="button" data-full="${escapeHtml(item.image)}" data-title="${escapeHtml(item.name)}" data-type="${escapeHtml(item.type)}">
