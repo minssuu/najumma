@@ -295,22 +295,21 @@ button { color: inherit; }
 .inventory-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:18px; }
 .inventory-heading > span { padding-bottom:4px; color:var(--gold-dark); font:500 8px/1 'Cormorant Garamond',serif; letter-spacing:.13em; }
 .inventory-guide { margin:14px 0 25px; color:#70675e; font-size:10px; }
-.inventory-grid { display:flex; gap:10px; margin-inline:-17px; padding:0 17px 15px; overflow-x:auto; overscroll-behavior-inline:contain; scroll-snap-type:x mandatory; scroll-padding-inline:17px; scrollbar-width:thin; scrollbar-color:rgba(200,169,106,.42) rgba(200,169,106,.08); -webkit-overflow-scrolling:touch; }
+.inventory-grid { display:flex; align-items:stretch; gap:10px; margin-inline:-17px; padding:0 17px 15px; overflow-x:auto; overflow-y:hidden; overscroll-behavior-inline:contain; scroll-snap-type:x mandatory; scroll-padding-inline:17px; scrollbar-width:thin; scrollbar-color:rgba(200,169,106,.42) rgba(200,169,106,.08); -webkit-overflow-scrolling:touch; }
 .inventory-grid::-webkit-scrollbar { height:3px; }
 .inventory-grid::-webkit-scrollbar-track { background:rgba(200,169,106,.08); }
 .inventory-grid::-webkit-scrollbar-thumb { background:rgba(200,169,106,.42); border-radius:99px; }
-.inventory-item { flex:0 0 clamp(220px,72vw,300px); min-width:0; padding:0; color:inherit; text-align:left; border:1px solid var(--line); background:#0c0a08; cursor:pointer; scroll-snap-align:start; transition:border-color .25s, transform .25s; }
+.inventory-item { flex:0 0 clamp(228px,76vw,280px); height:350px; min-width:0; padding:0; display:flex; flex-direction:column; overflow:hidden; color:inherit; text-align:left; border:1px solid var(--line); background:#0c0a08; cursor:pointer; scroll-snap-align:start; transition:border-color .25s, transform .25s; }
 .inventory-item:hover { border-color:var(--gold); transform:translateY(-2px); }
-.inventory-thumb { position:relative; display:block; aspect-ratio:4/3; overflow:hidden; border-bottom:1px solid var(--line); }
+.inventory-thumb { position:relative; min-height:0; flex:1 1 auto; display:block; overflow:hidden; border-bottom:1px solid var(--line); }
 .inventory-thumb::after { content:''; position:absolute; inset:0; box-shadow:inset 0 0 28px rgba(0,0,0,.32); pointer-events:none; }
 .inventory-thumb img { width:100%; height:100%; display:block; object-fit:cover; transition:transform .45s; }
 .inventory-item:hover img { transform:scale(1.035); }
-.inventory-meta { min-height:66px; display:flex; flex-direction:column; justify-content:center; padding:11px 12px; }
+.inventory-meta { min-height:0; flex:0 0 70px; display:flex; flex-direction:column; justify-content:center; padding:11px 12px; }
 .inventory-meta small { overflow:hidden; white-space:nowrap; text-overflow:ellipsis; color:var(--gold-dark); font:500 7px/1 'Cormorant Garamond',serif; letter-spacing:.09em; }
 .inventory-meta b { overflow:hidden; white-space:nowrap; text-overflow:ellipsis; margin-top:7px; font:500 10px/1.2 'Cormorant Garamond',serif; letter-spacing:.02em; }
 .inventory-item > i { display:none; }
 .inventory-grid.single .inventory-item { flex-basis:100%; }
-.inventory-grid.single .inventory-thumb { aspect-ratio:16/9; }
 
 .modal-open { overflow:hidden; }
 .inventory-modal { position:fixed; z-index:300; inset:0; padding:66px 14px 30px; display:flex; align-items:center; justify-content:center; background:rgba(3,3,3,.94); backdrop-filter:blur(14px); opacity:0; visibility:hidden; transition:opacity .25s, visibility .25s; }
