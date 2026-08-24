@@ -37,7 +37,7 @@
       <section class="past-story-section">
         <p class="eyebrow">Past story</p>
         <h2>${escapeHtml(DATA.people[personId].name)}의 이야기</h2>
-        <details class="novel-reader">
+        <details class="novel-reader${story.title.length > 12 ? ' long-title' : ''}">
           <summary>
             <span><b>${escapeHtml(story.title)}</b></span>
             <i><span class="reader-open">READ</span><span class="reader-close">CLOSE</span> ＋</i>
@@ -48,7 +48,10 @@
               <span></span>
             </header>
             ${story.paragraphs.map(paragraph => `<p>${escapeHtml(paragraph)}</p>`).join('')}
-            <footer>— END —</footer>
+            <footer>
+              <span>— END —</span>
+              <button class="story-close" type="button">이야기 닫기 ↑</button>
+            </footer>
           </article>
         </details>
       </section>`;
@@ -62,9 +65,9 @@
           <h2>TMI</h2>
         </div>
         <div class="tmi-grid">
-          ${[1, 2].map(number => `
+          ${['첫 번째', '두 번째'].map(label => `
             <details class="tmi-card">
-              <summary><span>[TMI ${number}]</span><i>＋</i></summary>
+              <summary><span>${label}</span><i>＋</i></summary>
               <div><p>내용 준비 중</p></div>
             </details>`).join('')}
         </div>
@@ -163,6 +166,8 @@
     const p = DATA.people[id];
     if (!p) return renderNotFound(root);
     document.title = `${p.name} · 나 같은 아줌마가 뭐가 좋다고`;
+    const previousId = previousPerson(id);
+    const nextId = nextPerson(id);
     root.innerHTML = `
       <section class="profile-hero detail-hero">
         <video class="profile-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
@@ -187,11 +192,23 @@
         ${renderInventory(p)}
       </section>
       <nav class="bottom-nav">
-        <a href="profile.html?id=${previousPerson(id)}">← PREV</a>
-        <a href="index.html#people-title">ALL PEOPLE</a>
-        <a href="profile.html?id=${nextPerson(id)}">NEXT →</a>
+        <a href="profile.html?id=${previousId}">← ${escapeHtml(DATA.people[previousId].name)}</a>
+        <a href="index.html#people-title">메인페이지</a>
+        <a href="profile.html?id=${nextId}">${escapeHtml(DATA.people[nextId].name)} →</a>
       </nav>`;
     setupInventoryModal();
+    setupStoryReaders();
+  }
+
+  function setupStoryReaders() {
+    document.querySelectorAll('.novel-reader').forEach(reader => {
+      const closeButton = reader.querySelector('.story-close');
+      if (!closeButton) return;
+      closeButton.addEventListener('click', () => {
+        reader.open = false;
+        requestAnimationFrame(() => reader.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      });
+    });
   }
 
   function previousPerson(current) {
